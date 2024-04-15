@@ -1,3 +1,7 @@
+# Object-Oriented Programming - data and logic are combined and the logic is
+# referred to as behaviors
+
+
 class Animal:
     def __init__(self, name: str) -> None:
         self.name = name

@@ -17,13 +17,19 @@ class Animal:
         self.name = name
 
 
+# animal = Animal("dog")
+# print(animal.__name)
+# animal.__name = "cat"
+# print(animal.__name)
+
+
 class Dog(Animal):
     def __init__(self, name: str) -> None:
         super().__init__(name)
 
         # cannot access this, not even in the
         # subclass
-        print(self.__name)
+        # print(self.__name)
 
         # can access in the subclass, but others
         # should not use it
@@ -33,9 +39,8 @@ class Dog(Animal):
         print(self.name)
 
 
-# animal = Animal("dog")
-# print(animal.__name)
-# animal.__name = "cat"
+
+animal = Dog("fido")
 # print(animal.__name)
 
 
