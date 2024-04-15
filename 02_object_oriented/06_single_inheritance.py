@@ -1,6 +1,6 @@
 class Animal:
-    def speak(self) -> None:
-        print("Animal Speaking")
+    def move(self) -> None:
+        print("Animal moving")
 
 
 class Dog(Animal):
@@ -10,9 +10,9 @@ class Dog(Animal):
 
 # Create an instance of Dog
 dog = Dog()
-dog.speak()  # Output: Animal Speaking
+dog.move()  # Output: Animal moving
 dog.bark()  # Output: Dog Barking
 
 animal = Animal()
-animal.speak()
+animal.move()
 # animal.bark() # will not work, inheritance is one way

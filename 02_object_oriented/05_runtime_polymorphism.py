@@ -5,13 +5,12 @@ class Animal:
 
 class Dog(Animal):
     def speak(self) -> str:
-        return "Bark!"
+        return "Bark!" # this line code represents 1000 lines of code making a dog bark
 
 
 class Cat(Animal):
-    ...
-    # def speak(self) -> str:
-    #     return "Meow!"
+    def speak(self) -> str:
+        return "Meow!"
 
 
 def make_animal_speak(animal: Animal) -> None:

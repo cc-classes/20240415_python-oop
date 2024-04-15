@@ -22,7 +22,7 @@ You are encouraged to review the solution as you complete the exercise. You may 
 
 4. Utilize Python type hints throughout the entire solution.
 
-5. Review how the `deposit`, `withdraw`, and `display_balance` methods are called for each account type in the `perorm_transactions` function.
+5. Review how the `deposit`, `withdraw`, and `display_balance` methods are called for each account type in the `perform_transactions` function.
 
 
 ## When You Are Done
