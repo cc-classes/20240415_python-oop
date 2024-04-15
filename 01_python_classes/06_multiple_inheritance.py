@@ -17,7 +17,7 @@ class Fish(Animal):
 
     def swim(self) -> str:
         return "Swimming!"
-    
+
     def do_it(self) -> None:
         print("Fish did it!")
 
@@ -29,12 +29,12 @@ class Bird(Animal):
 
     def fly(self) -> str:
         return "Flying!"
-    
+
     def do_it(self) -> None:
-        print("Bird did it!")    
+        print("Bird did it!")
 
 
-class FlyingFish(Fish, Bird):
+class FlyingFish(Bird, Fish):
     def __init__(self) -> None:
         print("Flying Fish constructor")
         super().__init__()

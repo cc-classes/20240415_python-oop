@@ -1,4 +1,3 @@
-
 # Choosing between various methods of getting and setting attributes:
 # 1. Use plain data attributes if the accessing the data is fine, and
 # no validation is desired when setting
@@ -26,7 +25,6 @@ class Circle:
         #   on the attribute to prevent access
         # self.__radius = radius
 
-
     @property
     def radius(self) -> float:
         """
@@ -34,14 +32,17 @@ class Circle:
         It does not have a corresponding setter as the radius is derived
         from the diameter.
         """
+        print("get radius")
         return self._radius
 
+    # must be defined follow the radius property method
     @radius.setter
     def radius(self, value: float) -> None:
         """
         This is the setter method for the radius.
         It checks if the provided value is positive before setting it.
         """
+        print("set radius")
         if value < 0:
             raise ValueError("Radius cannot be negative.")
         self._radius = value
@@ -61,16 +62,17 @@ class Circle:
 
 # Creating a Circle object
 c = Circle(5)
+c.radius = 15
 print(c.radius)  # Output: 5
-print(c.diameter)  # Output: 10
+# print(c.diameter)  # Output: 10
 
 # Setting a new radius
-c.radius = 3
-print(c.radius)  # Output: 3
-print(c.diameter)  # Output: 6
+# c.radius = 3
+# print(c.radius)  # Output: 3
+# print(c.diameter)  # Output: 6
 
-# Trying to set a negative radius will raise a ValueError
-try:
-    c.radius = -2
-except ValueError as e:
-    print(e)  # Output: Radius cannot be negative.
+# # Trying to set a negative radius will raise a ValueError
+# try:
+#     c.radius = -2
+# except ValueError as e:
+#     print(e)  # Output: Radius cannot be negative.

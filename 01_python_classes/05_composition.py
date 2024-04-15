@@ -14,6 +14,7 @@ class Tail:
 class Wing:
     pass
 
+
 class Animal:
     def set_name(self, name: str) -> None:
         self.name = name
@@ -28,13 +29,24 @@ class Animal:
     # contract only, no implementation
     def speak(self) -> str:
         raise NotImplementedError
-    
+
     def move(self) -> None:
         raise NotImplementedError
 
 
+# Inheritance is a "is-a" relationship
+# Composition is a "has-a" relationship
+
+
+# Dog inherits from Animal
+# Dog is an Animal ("is-a" relationship)
 class Dog(Animal):
     def __init__(self) -> None:
+        # Dog has a Leg ("has-a" relationship)
+        # Dog has a Tail ("has-a" relationship)
+        # the creation of the legs and tail is an example of composition
+        # Dog is incorporating the functionality of Leg and Tail classes
+        #   into its implementation
         self.leg1 = Leg()
         self.leg2 = Leg()
         self.leg3 = Leg()

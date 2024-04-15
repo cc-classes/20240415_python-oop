@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 
 
 # partial implementation and contract
+# abstract classess cannot be instantiated
 class Shape(ABC):
     def set_name(self, name: str) -> None:
         self.name = name
@@ -11,6 +12,9 @@ class Shape(ABC):
     def area(self) -> float:
         pass
 
+
+# must create a subclass that inherits from Shape, and
+# implements the area method
 class Rectangle(Shape):
     def __init__(self, width: float, height: float):
         self.width = width

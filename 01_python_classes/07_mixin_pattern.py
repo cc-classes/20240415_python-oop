@@ -1,6 +1,8 @@
 class JSONMixin:
     # key to the mixin pattern is the mixin does not have a constructor
-    # there is no __init__ method
+    # there is no __init__ method and the mixin class does not have any instance
+    # attributes, and it does not inherit from any other classes that Person
+    # or Animal inherit from
 
     # mixin method names need to be unique across the various related mixins
     # the mixin class can contain multiple methods

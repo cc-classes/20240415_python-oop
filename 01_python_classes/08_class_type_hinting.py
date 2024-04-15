@@ -15,4 +15,4 @@ print(greet(p))  # Output: Hello, Alice!
 
 # Incorrect usage, static type checker would flag this as an error
 q = "this is not a Person object"
-print(greet(q))  # This would cause a type error, as q is not a Person object
+# print(greet(q))  # This would cause a type error, as q is not a Person object
