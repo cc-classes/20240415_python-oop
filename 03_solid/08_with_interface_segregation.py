@@ -31,3 +31,11 @@ class AdminUserManager(UserOperations, ReportGeneration):
 class ClientReportManager(ReportGeneration):
     def generate_report(self) -> None:
         print("Report for client generated")
+
+
+def print_user_reports(user_manager: ReportGeneration) -> None:
+    user_manager.generate_report()
+
+
+print_user_reports(ClientReportManager())
+print_user_reports(AdminUserManager())
