@@ -1,3 +1,4 @@
+# User.py
 class User:
     def __init__(self, name: str, age: int):
         self._name = name
@@ -11,7 +12,7 @@ class User:
     def age(self) -> int:
         return self._age
 
-
+# UserReporting.py
 class UserReporting:
     def __init__(self, user: User):
         self._user = user
@@ -22,7 +23,7 @@ class UserReporting:
     def get_user_summary(self) -> str:
         return f"Name: {self._user.name}"
 
-
+# UserDatabase.py
 class UserDatabase:
     def load_user_from_db(self) -> User:
         return User("Bob", 21)
