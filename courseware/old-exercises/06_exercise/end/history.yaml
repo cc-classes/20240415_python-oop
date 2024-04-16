@@ -1,0 +1,6 @@
+- id: 1
+  name: add
+  operand: 2.0
+- id: 2
+  name: subtract
+  operand: 4.0
