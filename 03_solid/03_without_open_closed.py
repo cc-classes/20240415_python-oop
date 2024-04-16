@@ -10,7 +10,7 @@ class Rectangle:
 # I needed to modify AreaCalculator to support new shapes,
 # this violated the closed for modification principle
 class AreaCalculator:
-    def calculate_area(self, shape: Any) -> Optional[int]:
+    def calculate_area(self, shape: Any) -> Optional[float]:
         if isinstance(shape, Rectangle):  # had to know the shape type
             return (
                 shape.width * shape.height

@@ -26,6 +26,14 @@ class Circle:
         return 2 * 3.14 * self.radius
 
 
+class Square:
+    def __init__(self, side: float) -> None:
+        self.side = side
+
+    def calculate_area(self) -> float:
+        return self.side * self.side
+
+
 class AreaCalculator:
     def calculate_area(self, shape: Shape) -> str:
         return f"Area Calculator: {shape.calculate_area()}"
@@ -34,9 +42,11 @@ class AreaCalculator:
 def main(area_calc: AreaCalculator) -> None:
     rect = Rectangle(5, 4)
     circ = Circle(3)
+    sqar = Square(5)
     print(circ.calculate_circumference())
     print(f"rect area: {area_calc.calculate_area(rect)}")  # Output: 20
     print(f"circle area: {area_calc.calculate_area(circ)}")  # Output: 28.26
+    print(f"square area: {area_calc.calculate_area(sqar)}")  # Output: 28.26
 
 
 if __name__ == "__main__":
