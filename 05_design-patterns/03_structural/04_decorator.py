@@ -5,12 +5,15 @@
 
 from typing import Protocol
 
+
 class Coffee(Protocol):
-    def cost(self) -> float:...
+    def cost(self) -> float: ...
+
 
 class BlackCoffee:
     def cost(self) -> float:
         return 5
+
 
 # Decorator Class
 class Milk:
@@ -19,15 +22,16 @@ class Milk:
 
     def cost(self) -> float:
         return self._coffee.cost() + 2
-    
-# Decorator Class    
+
+
+# Decorator Class
 class Sugar:
     def __init__(self, coffee: Coffee) -> None:
         self._coffee = coffee
 
     def cost(self) -> float:
         return self._coffee.cost() + 1
-    
+
 
 # Client code
 coffee = BlackCoffee()
