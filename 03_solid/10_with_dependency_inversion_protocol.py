@@ -16,6 +16,11 @@ class SMSNotifier:
         print(f"SMS sent with message: '{message}'")
 
 
+# static typing - type hints determine type at programming time
+# vs
+# duck-typing - type is resolve at runtime
+
+
 class Notification:
     def __init__(self, notifier: Notifier):
         self.notifier = notifier
