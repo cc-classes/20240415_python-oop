@@ -1,44 +1,30 @@
-from typing import Protocol
+# class PersonFileHandler:
 
-#  (Biz Logic)      (Dividing Line)   (Data Layer)
-# Notification -> NotifierService <- EmailNotifier
-#                   ^   ^
-#                   |    \ PhoneNotifier
-#                   |
-#                SMSNotifier
+#     def __init__(self, person: Person) -> None:
+#         self.person = person
 
+#     def save_to_file(self) -> None:
+#         with open("persons.txt", "a") as file:
+#             file.write(self.person.name + "\n")
 
-class NotifierService(Protocol):
-    def notify(self, message: str) -> None: ...
+# class PersonJsonFileHandler:
 
+#         def __init__(self, person: Person) -> None:
+#             self.person = person
 
-class EmailNotifier:
-    def notify(self, message: str) -> None:
-        # send an email notification
-        print(f"Email sent with message: '{message}'")
+#         def save_to_file(self) -> None:
+#             with open("persons.json", "a") as file:
+#                 file.write(f'{{"name": "{self.person.name}"}}\n')
 
+# class Person:
 
-class PhoneNotifier:
-    def notify(self, message: str) -> None:
-        # send an phone notification
-        print(f"Phone sent with message: '{message}'")
+#     def __init__(self, name: str) -> None:
+#         self.name = name
 
 
-class SMSNotifier:
-    def notify(self, message: str) -> None:
-        # send an sms notification
-        print(f"SMS sent with message: '{message}'")
+# person = Person("John")
+# person_file_handler = PersonFileHandler(person)
+# person_file_handler.save_to_file()
 
-
-class Notification:
-    notifier: NotifierService
-
-    def __init__(self, notifier: NotifierService) -> None:
-        self.notifier = notifier
-
-    def send(self, message: str) -> None:
-        self.notifier.notify(message)
-
-
-notification = Notification(EmailNotifier())
-notification.send("This is an email notification.")
+# person_json_file_handler = PersonJsonFileHandler(person)
+# person_json_file_handler.save_to_file()
