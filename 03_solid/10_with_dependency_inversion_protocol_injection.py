@@ -49,6 +49,16 @@ def injector(service_token: str) -> Notifier:
         return SMSNotifier()
 
 
+# import os
+
+# service_token = os.environ["NOTIFICATION_SERVICE"]
+# if service_token == "email":
+#     notification_service = EmailNotifier()
+# elif service_token == "phone":
+#     notification_service = PhoneNotifier()
+# else:
+#     notification_service = SMSNotifier()
+
 phone_notification = Notification(injector("phone"))
 # Output: Phone sent with message: 'This is an Phone notification.'
 phone_notification.send("This is an Phone notification.")
