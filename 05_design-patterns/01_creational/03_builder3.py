@@ -65,9 +65,7 @@ class ValidationBuilder:
 
 input = (
     ValidationBuilder(InputField("age"))
-    .add_required()
-    .add_min_value(18)
-    .build()
+        .add_required().add_min_value(18).build() # chain pattern
 )
 
 print(input)

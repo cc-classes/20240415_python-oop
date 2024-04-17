@@ -32,6 +32,8 @@ class ButtonFactory:
             raise ValueError("Invalid type.")
 
 
+# button = WindowsButton()
+
 # Client code
 factory = ButtonFactory()
 button = factory.create_button("Windows")

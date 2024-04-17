@@ -34,6 +34,8 @@ class ComputerBuilder:
         self.cpu = f"cpu: {cpu}"
 
     def add_memory(self, memory: str) -> None:
+        if self.cpu == "x64" and not memory == "64gb":
+            raise ValueError("Invalid memory for x64")
         self.memory = f"memory: {memory}"
 
     def add_drive(self, drive: str) -> None:

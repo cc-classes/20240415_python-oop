@@ -22,7 +22,7 @@ class ComputerBuilder(Protocol):
         pass
 
 
-class MyComputerBuilder(ComputerBuilder):
+class MyComputerBuilder:
     def build(self) -> Computer:
         computer = Computer()
         computer.add("Case")
@@ -33,8 +33,35 @@ class MyComputerBuilder(ComputerBuilder):
         return computer
 
 
+# builders return the same object with different configurations, where the
+# configurations and/or configuration rules are defined outside of the constructor
+class YourComputerBuilder:
+    def build(self) -> Computer:
+        computer = Computer()
+        computer.add("Case")
+        computer.add("Motherboard")
+        computer.add("CPU")
+        computer.add("CPU")
+        computer.add("Memory")
+        computer.add("Power Supply")
+        computer.add("Power Supply")
+        return computer
+
+
+# factory return different implementation of objects at runtime that
+# implement the same contract
+class ComputeBuilderFactory:
+    def create_builder(self, type: str) -> ComputerBuilder:
+        if type == "My":
+            return MyComputerBuilder()
+        elif type == "Your":
+            return YourComputerBuilder()
+        else:
+            raise ValueError("Invalid type.")
+
+
 # Client code
-builder = MyComputerBuilder()
+builder = ComputeBuilderFactory().create_builder("My")
 computer = builder.build()
 print(
     computer.describe()
